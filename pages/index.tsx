@@ -6,10 +6,10 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 // import { styles } from './App/Style';
-import HouseContainer from './pages/HouseContainer';
-import PeopleContainer from './pages/PeopleContainer';
-import RentContainer from './pages/RentContainer';
-import ConfigContainer from './pages/ConfigContainer';
+import HouseContainer from './HouseContainer';
+import PeopleContainer from './PeopleContainer';
+import RentContainer from './RentContainer';
+import ConfigContainer from './ConfigContainer';
 
 
 const HouseStack = createStackNavigator(
