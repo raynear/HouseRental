@@ -3,7 +3,7 @@ import { Text, View, ScrollView } from 'react-native';
 // import { BottomNavigation } from 'react-native-material-ui';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import { createBottomTabNavigator } from 'react-navigation-tabs';
+import { createMaterialTopTabNavigator, createBottomTabNavigator } from 'react-navigation-tabs';
 
 // import { styles } from './App/Style';
 import HouseContainer from './pages/HouseContainer';
@@ -54,12 +54,12 @@ const ConfigStack = createStackNavigator(
 );
 
 
-const TabNavigator = createBottomTabNavigator(
+const TabNavigator = createMaterialTopTabNavigator(
   {
-    Home: HouseStack,
-    People: PeopleStack,
-    Rent: RentStack,
-    Config: ConfigStack,
+    House: { screen: HouseStack },
+    People: { screen: PeopleStack },
+    Rent: { screen: RentStack },
+    Config: { screen: ConfigStack },
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
@@ -68,26 +68,34 @@ const TabNavigator = createBottomTabNavigator(
         let icon = "▲";
 
         if (routeName === 'House') {
-          icon = "🌈";
+          icon = "🏡";
         } else if (routeName === 'People') {
-          icon = "🌙"
+          icon = "🙍"
         } else if (routeName === 'Rent') {
-          icon = "🌙"
+          icon = "📝"
         } else if (routeName === 'Config') {
-          icon = "🌙"
+          icon = "🔧"
         }
 
-
         // can use react-native-vector-icons
-        // <Icon name={iconName} size={iconSize} color={iconColor} />
+        // <Icon name={iconName} size={iconSize} color={iconColor} / >
         return <Text style={{ color: focused && "#46c3ad" || "#888" }}>{icon}</Text>
+      },
+      animationEnabled: true,
+      swipeEnabled: true,
+      tabBarPosition: "bottom",
+      tabBarOptions: {
+        style: {
+          backgroundColor: 'white'
+        },
+        activeTintColor: "#000",
+        inactiveTintColor: "#aaa",
+        iconStyle: { height: 30 },
+        upperCaseLabel: false,
+        showLabel: true,
+        showIcon: true,
       }
     }),
-    lazy: false,
-    tabBarOptions: {
-      activeTintColor: "#46c3ad",
-      inactiveTintColor: "#888",
-    },
   }
 );
 
