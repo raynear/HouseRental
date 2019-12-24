@@ -104,7 +104,7 @@ const AppStack = createStackNavigator(
 
 
 export default function App() {
-  createAppContainer(AppStack);
-  return <AppStack />;
+  const AppContainer = createAppContainer(AppStack);
+  return <AppContainer />;
 }
 
