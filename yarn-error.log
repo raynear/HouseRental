@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-navigation-stack
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-native-community
 
 PATH: 
-  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\PuTTY\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Yarn\bin\;C:\Go\bin;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Geth;C:\Users\raynear\AppData\Local\Programs\Python\Python38;C:\Users\raynear\AppData\Local\Programs\Python\Python38\Scripts\;C:\Users\raynear\AppData\Local\Programs\Python\Python38\;C:\Users\raynear\AppData\Local\Programs\Python\Python38;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Bandizip\;C:\Program Files (x86)\Scapple;C:\Users\raynear\go\bin;C:\Program Files\Docker Toolbox;C:\Users\raynear\AppData\Local\Yarn\bin;C:\Users\raynear\go\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2019.1.3\bin;C:\Users\raynear\AppData\Local\Microsoft\WindowsApps;C:\Users\raynear\AppData\Roaming\npm;C:\Users\raynear\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\raynear\AppData\Local\Programs\Python\Python38;
+  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\raynear\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Intel\WiFi\bin;C:\Program Files\Common Files\Intel\WirelessCommon;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\PuTTY;C:\WINDOWS\System32\OpenSSH;C:\Program Files (x86)\Yarn\bin;C:\Go\bin;C:\Program Files\nodejs;C:\Program Files\Git\cmd;C:\Program Files\Geth;C:\Users\raynear\AppData\Local\Programs\Python\Python38;C:\Users\raynear\AppData\Local\Programs\Python\Python38\Scripts;C:\Users\raynear\AppData\Local\Programs\Python\Python38;C:\Users\raynear\AppData\Local\Programs\Python\Python38;C:\Program Files\Intel\WiFi\bin;C:\Program Files\Common Files\Intel\WirelessCommon;C:\Program Files\Bandizip;C:\Program Files (x86)\Scapple;C:\Users\raynear\go\bin;C:\Program Files\Docker Toolbox;C:\Users\raynear\AppData\Local\Yarn\bin;C:\Users\raynear\go\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2019.1.3\bin;C:\Users\raynear\AppData\Local\Microsoft\WindowsApps;C:\Users\raynear\AppData\Roaming\npm;C:\Users\raynear\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\raynear\AppData\Local\Programs\Python\Python38
 
 Yarn version: 
   1.16.0
@@ -14,7 +14,17 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'C:\Users\raynear\Documents\Project\RentalManage\HouseRental\node_modules\@babel\generator\node_modules\.bin'
+  Error: https://registry.yarnpkg.com/react-native-community: Not found
+      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:65200:18)
+      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:129590:22)
+      at Request.emit (events.js:198:13)
+      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:130562:10)
+      at Request.emit (events.js:198:13)
+      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:130484:12)
+      at Object.onceWrapper (events.js:286:20)
+      at IncomingMessage.emit (events.js:203:15)
+      at endReadableNT (_stream_readable.js:1145:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
 
 npm manifest: 
   {
@@ -36,13 +46,18 @@ npm manifest:
       "react-dom": "~16.9.0",
       "react-native": "^0.61.5",
       "react-native-cli": "^2.0.1",
+      "react-native-firebase": "^5.6.0",
       "react-native-gesture-handler": "^1.5.2",
+      "react-native-google-signin": "^2.1.1",
       "react-native-material-ui": "^1.30.1",
       "react-native-navigation": "^4.0.8",
+      "react-native-reanimated": "^1.4.0",
       "react-native-screens": "2.0.0-alpha.12",
       "react-native-scrollable-tab-view": "^1.0.0",
       "react-native-web": "~0.11.7",
-      "react-navigation": "^4.0.10"
+      "react-navigation": "^4.0.10",
+      "react-navigation-stack": "^1.10.3",
+      "react-navigation-tabs": "^2.6.2"
     },
     "devDependencies": {
       "@types/react": "~16.9.0",
@@ -3415,6 +3430,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/growly/-/growly-1.3.0.tgz#f10748cbe76af964b7c96c93c6bcc28af120c081"
     integrity sha1-8QdIy+dq+WS3yWyTxrzCivEgwIE=
   
+  hammerjs@^2.0.8:
+    version "2.0.8"
+    resolved "https://registry.yarnpkg.com/hammerjs/-/hammerjs-2.0.8.tgz#04ef77862cff2bb79d30f7692095930222bf60f1"
+    integrity sha1-BO93hiz/K7edMPdpIJWTAiK/YPE=
+  
   has-ansi@^2.0.0:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/has-ansi/-/has-ansi-2.0.0.tgz#34f5049ce1ecdf2b0649af3ef24e45ed35416d91"
@@ -4899,7 +4919,7 @@ Lockfile:
     dependencies:
       is-wsl "^1.1.0"
   
-  opencollective-postinstall@^2.0.2:
+  opencollective-postinstall@^2.0.0, opencollective-postinstall@^2.0.2:
     version "2.0.2"
     resolved "https://registry.yarnpkg.com/opencollective-postinstall/-/opencollective-postinstall-2.0.2.tgz#5657f1bede69b6e33a45939b061eb53d3c6c3a89"
     integrity sha512-pVOEP16TrAO2/fjej1IdOyupJY8KDUM1CvsaScRbw6oddvpQoOfGk4ywha0HKKVAD6RkW4x6Q+tNBwhf3Bgpuw==
@@ -5316,6 +5336,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-2.0.0.tgz#71d9c4cde47114c4102454f76da055c2bc48c948"
     integrity sha512-txfpPCQYiazVdcbMRhatqWKcAxJweUu2wDXvts5/7Wyp6+Y9cHojqXHsLPEckzutfHlxZhG8Oiundbmp8Fd6eQ==
   
+  react-lifecycles-compat@^3.0.4:
+    version "3.0.4"
+    resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
+    integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
+  
   react-native-cli@^2.0.1:
     version "2.0.1"
     resolved "https://registry.yarnpkg.com/react-native-cli/-/react-native-cli-2.0.1.tgz#f2cd3c7aa1b83828cdfba630e2dfd817df766d54"
@@ -5340,6 +5365,29 @@ Lockfile:
     integrity sha512-MlYrNIldnEMKn6TVatQN1P64GoVlwGIuz+8ncdfJ0Wq/xtzUkQwlil8Uksyp7MhKfENE09MQnGNcba6Mx3oSAA==
     dependencies:
       lodash "^4.17.15"
+  
+  react-native-firebase@^5.6.0:
+    version "5.6.0"
+    resolved "https://registry.yarnpkg.com/react-native-firebase/-/react-native-firebase-5.6.0.tgz#6f6123f53cb73477915dd55c55f3e1de91db38d2"
+    integrity sha512-I+o3zNLdIz4pxWTCSZH70M1BcPl+SdqKQfurOT0sWcaMSL2ecDqVy0PCTmN7ORt7/Z879Er6PLgA/psjArQlmw==
+    dependencies:
+      opencollective-postinstall "^2.0.0"
+      prop-types "^15.7.2"
+  
+  react-native-gesture-handler@^1.5.2:
+    version "1.5.2"
+    resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.5.2.tgz#281111550bf1eee10b7feba5278d142169892731"
+    integrity sha512-Xp03dq4XYVTD0xmWx4DW4eX+ox1NQLjHmbykspTdS5FCNIVIOekVXRLFCw1698/v8dYUHApNo6K3s3BCD8fqPA==
+    dependencies:
+      hammerjs "^2.0.8"
+      hoist-non-react-statics "^2.3.1"
+      invariant "^2.2.4"
+      prop-types "^15.7.2"
+  
+  react-native-google-signin@^2.1.1:
+    version "2.1.1"
+    resolved "https://registry.yarnpkg.com/react-native-google-signin/-/react-native-google-signin-2.1.1.tgz#4281940eee88602b0181dd49affdf8c92980c85c"
+    integrity sha512-6l3fiLdX/bfhh0BoxGq+jGkagFsO+mrE/eRV4+3/0k8+FDxO90vdPpQdDiwlM5vWXRxWthTzMM09/jHw+4cvNw==
   
   react-native-iphone-x-helper@^1.0.3:
     version "1.2.1"
@@ -5381,7 +5429,12 @@ Lockfile:
       react-lifecycles-compat "2.0.0"
       tslib "1.9.3"
   
-  react-native-safe-area-view@^0.14.1:
+  react-native-reanimated@^1.4.0:
+    version "1.4.0"
+    resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.4.0.tgz#7f1acbf9be08492d834f512700570978052be2f9"
+    integrity sha512-tO7nSNNP+iRLVbkcSS5GXyDBb7tSI02+XuRL3/S39EAr35rnvUy2JfeLUQG+fWSObJjnMVhasUDEUwlENk8IXw==
+  
+  react-native-safe-area-view@^0.14.1, react-native-safe-area-view@^0.14.6:
     version "0.14.8"
     resolved "https://registry.yarnpkg.com/react-native-safe-area-view/-/react-native-safe-area-view-0.14.8.tgz#ef33c46ff8164ae77acad48c3039ec9c34873e5b"
     integrity sha512-MtRSIcZNstxv87Jet+UsPhEd1tpGe8cVskDXlP657x6rHpSrbrc+y13ZNXrwAgGNNhqQNX7UJT68ZIq//ZRmvw==
@@ -5411,6 +5464,11 @@ Lockfile:
       create-react-class "^15.6.2"
       prop-types "^15.6.0"
       react-timer-mixin "^0.13.3"
+  
+  react-native-tab-view@^2.11.0:
+    version "2.11.0"
+    resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-2.11.0.tgz#2e57d1f617ccc88c7f452708804f3409f880b700"
+    integrity sha512-vqetlxGO7A8bnqvXcB50MWpRZAImXFrDGz1WCQKdCqe03Ey3ZzENe7yLuWrtBJYlepGfOLAsmCXv+wW82Yfm1w==
   
   react-native-vector-icons@^6.6.0:
     version "6.6.0"
@@ -5476,6 +5534,23 @@ Lockfile:
       scheduler "0.15.0"
       stacktrace-parser "^0.1.3"
       whatwg-fetch "^3.0.0"
+  
+  react-navigation-stack@^1.10.3:
+    version "1.10.3"
+    resolved "https://registry.yarnpkg.com/react-navigation-stack/-/react-navigation-stack-1.10.3.tgz#e714e442b20427f0d2d3c18fce1f9e8cfe69be0b"
+    integrity sha512-1gksFi/g/Lg9sBhgLlD0OiEB5xnatHb4C0eNMA5tli9cTVlhq375XNPIqOiTyftibBmjdApAsZFj5srUCoOu/w==
+    dependencies:
+      prop-types "^15.7.2"
+  
+  react-navigation-tabs@^2.6.2:
+    version "2.6.2"
+    resolved "https://registry.yarnpkg.com/react-navigation-tabs/-/react-navigation-tabs-2.6.2.tgz#6611f3bbc5fcbc004a96a457e1dbe8d957d09ef5"
+    integrity sha512-b7Bwio3pOyb2dJOsfICm1eXUCekULO63VitLlkslsuwB5v5qXD9u+TkuSGADPiAybRH3Fts4cQX/xA5WGsIsfg==
+    dependencies:
+      hoist-non-react-statics "^3.3.0"
+      react-lifecycles-compat "^3.0.4"
+      react-native-safe-area-view "^0.14.6"
+      react-native-tab-view "^2.11.0"
   
   react-navigation@^4.0.10:
     version "4.0.10"
