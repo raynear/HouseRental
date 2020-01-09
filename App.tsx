@@ -11,6 +11,26 @@ import PeopleContainer from './pages/PeopleContainer';
 import RentContainer from './pages/RentContainer';
 import ConfigContainer from './pages/ConfigContainer';
 
+import gql from "graphql-tag";
+import ApolloClient from "apollo-boost";
+import { ApolloProvider } from "react-apollo";
+import { InMemoryCache } from "apollo-cache-inmemory";
+
+
+const client = new ApolloClient({
+  uri: "https://us-central1-house-rental-8c426.cloudfunctions.net/graphql",
+  // tell apollo to include credentials for csrf token protection
+  credentials: "include",
+  // async operation with fetch to get csrf token
+  cache: new InMemoryCache(),
+  clientState: {
+    defaults: {
+      data: {}
+    },
+    resolvers: {},
+    typeDefs: ``
+  }
+});
 
 const HouseStack = createStackNavigator(
   {
@@ -113,6 +133,10 @@ const AppStack = createStackNavigator(
 
 export default function App() {
   const AppContainer = createAppContainer(AppStack);
-  return <AppContainer />;
+  return (
+    <ApolloProvider client={client}>
+      <AppContainer />
+    </ApolloProvider>
+  );
 }
 
