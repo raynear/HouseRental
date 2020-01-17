@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text, View, ScrollView } from 'react-native';
+import { AppLoading } from 'expo';
+import * as Font from 'expo-font';
+import { Ionicons } from '@expo/vector-icons';
 // import { BottomNavigation } from 'react-native-material-ui';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
@@ -7,11 +10,11 @@ import { createMaterialTopTabNavigator, createBottomTabNavigator } from 'react-n
 
 // import { styles } from './App/Style';
 import HouseContainer from './pages/HouseContainer';
+import EditHouseContainer from './pages/EditHouseContainer';
 import PeopleContainer from './pages/PeopleContainer';
 import RentContainer from './pages/RentContainer';
 import ConfigContainer from './pages/ConfigContainer';
 
-import gql from "graphql-tag";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 import { InMemoryCache } from "apollo-cache-inmemory";
@@ -34,12 +37,14 @@ const client = new ApolloClient({
 
 const HouseStack = createStackNavigator(
   {
-    HouseContainer
+    House: HouseContainer,
+    Edit: EditHouseContainer
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
       title: 'House',
     }),
+    initialRouteName: 'House',
   }
 );
 const PeopleStack = createStackNavigator(
@@ -130,8 +135,24 @@ const AppStack = createStackNavigator(
   }
 );
 
-
 export default function App() {
+  const [isReady, setIsReady] = useState(false);
+
+  async function fontLoad() {
+    await Font.loadAsync({
+      Roboto: require('native-base/Fonts/Roboto.ttf'),
+      Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
+      ...Ionicons.font,
+    });
+    setIsReady(true);
+  }
+
+  useEffect(() => {
+    fontLoad();
+  })
+  if (!isReady) {
+    return <AppLoading />;
+  }
   const AppContainer = createAppContainer(AppStack);
   return (
     <ApolloProvider client={client}>
@@ -139,4 +160,3 @@ export default function App() {
     </ApolloProvider>
   );
 }
-
