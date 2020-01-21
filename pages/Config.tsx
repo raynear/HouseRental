@@ -8,8 +8,8 @@ export default function Config(props: any) {
   console.log("hotdogs", buildings);
   return (
     <View style={styles.container}>
-      {buildings.map((aBuilding) => {
-        return <Text>{aBuilding.name}</Text>
+      {buildings.map((aBuilding, idx) => {
+        return <Text key={idx}>{aBuilding.name}</Text>
       })}
     </View>
   );

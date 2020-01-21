@@ -6,22 +6,24 @@ export default function EditHouse(props: any) {
     <Content>
       <Form>
         <Item floatingLabel>
-          <Label>Username</Label>
+          <Label>House Name</Label>
           <Input
-            value={props.username}
-            onChangeText={text => props.setUsername(text)}
+            value={props.houseName}
+            onChangeText={text => props.setHouseName(text)}
           />
         </Item>
-        <Item floatingLabel>
-          <Label>Password</Label>
-          <Input
-            secureTextEntry={true}
-            textContentType="password"
-            value={props.password}
-            onChangeText={text => props.setPassword(text)}
-          />
-        </Item>
-        <Button block info><Text>Sign in</Text></Button>
+        <Button block info onPress={props.addRoom}><Text>Add Rooms</Text></Button>
+        {props.rooms.map((item: any, idx: number) => {
+          return (
+            <Item floatingLabel key={idx}>
+              <Label>Room {idx.toString()}</Label>
+              <Input
+                secureTextEntry={true}
+                value={item.name}
+                onChangeText={props.editRoom}
+              />
+            </Item>);
+        })}
       </Form>
     </Content>
   );
