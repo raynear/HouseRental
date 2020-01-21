@@ -28,7 +28,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
   clientState: {
     defaults: {
-      data: {}
+      data: { __typename: "data" }
     },
     resolvers: {},
     typeDefs: ``

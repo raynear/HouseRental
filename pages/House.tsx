@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
-import { withNavigation } from "react-navigation";
-import { NavigationStackProp } from "react-navigation-stack";
+import { StyleSheet, View, Button } from 'react-native';
+import { Container, Header, Content, List, ListItem, Text } from 'native-base';
+import { withNavigation } from 'react-navigation';
+import { NavigationStackProp } from 'react-navigation-stack';
 
 import { styles } from "../App/Style";
 
@@ -10,10 +11,20 @@ const MoveButton = withNavigation((props: { navigation: NavigationStackProp }) =
 ))
 
 export default function House(props: any) {
+  if (props.loading) return <Text>로딩 중...</Text>;
+  if (props.error) return <Text>오류 :</Text>;
+
+  const buildings = props.data.buildings;
   return (
-    <View style={styles.container}>
-      <Text>House</Text>
-      <MoveButton />
-    </View>
+    <Container>
+      <Content>
+        <List>
+          {buildings.map((item, idx) => {
+            return <ListItem key={idx} onPress={() => props.moveToBuilding(idx)}><Text>{item.name}</Text><Text>{item.address}</Text></ListItem>
+          })}
+        </List>
+        <MoveButton />
+      </Content>
+    </Container >
   );
 }

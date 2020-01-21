@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import EditHouse from "./EditHouse";
+import EditRooms from "./EditRooms";
 
 export default function EditHouseContainer() {
   const [houseName, setHouseName] = useState("");
@@ -19,7 +19,7 @@ export default function EditHouseContainer() {
   }
 
   return (
-    <EditHouse
+    <EditRooms
       housename={houseName}
       setHouseName={setHouseName}
       rooms={rooms}

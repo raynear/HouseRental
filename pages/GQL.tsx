@@ -4,6 +4,7 @@ export const GET_NAME = gql`
     query {
       buildings {
         name
+        address
       }
     }
   `
