@@ -1,18 +1,8 @@
-import React, { useState } from 'react';
-import { StyleSheet, View, Button } from 'react-native';
-import { Container, Header, Content, List, ListItem, Text } from 'native-base';
+import React from 'react';
+import { Container, Content, List, ListItem, Text, Button } from 'native-base';
 import { withNavigation } from 'react-navigation';
-import { NavigationStackProp } from 'react-navigation-stack';
-
-import { styles } from "../App/Style";
-
-const MoveButton = withNavigation((props: { navigation: NavigationStackProp }) => (
-  <Button title="Move" onPress={() => props.navigation.push('Edit')} />
-))
 
 function House(props: any) {
-  console.log("props", Object.keys(props));
-
   if (props.loading) return <Text>로딩 중...</Text>;
   if (props.error) return <Text>오류 :</Text>;
 
@@ -21,11 +11,11 @@ function House(props: any) {
     <Container>
       <Content>
         <List>
-          {buildings.map((item, idx) => {
-            return <ListItem key={idx} onPress={() => props.navigation.navigate("Edit", { id: item.id, name: item.name, address: item.address })}><Text>{item.id + item.name + item.address}</Text></ListItem>
+          {buildings.map((item: any, idx: number) => {
+            return <ListItem key={idx} onPress={() => props.navigation.navigate("HouseDetail", { id: item.id, name: item.name, address: item.address })}><Text>{item.id + item.name + item.address}</Text></ListItem>
           })}
         </List>
-        <MoveButton />
+        <Button onPress={() => props.navigation.push('EditHouse')}><Text>Add New House</Text></Button>
       </Content>
     </Container >
   );

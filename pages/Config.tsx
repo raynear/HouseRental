@@ -1,15 +1,12 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { Text, View } from 'react-native';
 
 import { styles } from "../App/Style";
 
 export default function Config(props: any) {
-  const buildings = props.data.buildings;
   return (
     <View style={styles.container}>
-      {buildings.map((aBuilding, idx) => {
-        return <Text key={idx}>{aBuilding.name}</Text>
-      })}
+      <Text>aBuilding.name</Text>
     </View>
   );
 }

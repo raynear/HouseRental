@@ -11,6 +11,8 @@ import { createMaterialTopTabNavigator, createBottomTabNavigator } from 'react-n
 // import { styles } from './App/Style';
 import HouseContainer from './pages/HouseContainer';
 import EditHouseContainer from './pages/EditHouseContainer';
+import HouseDetailContainer from './pages/HouseDetailContainer';
+import AddRoomContainer from './pages/AddRoomContainer';
 import PeopleContainer from './pages/PeopleContainer';
 import RentContainer from './pages/RentContainer';
 import ConfigContainer from './pages/ConfigContainer';
@@ -38,7 +40,9 @@ const client = new ApolloClient({
 const HouseStack = createStackNavigator(
   {
     House: HouseContainer,
-    Edit: EditHouseContainer
+    EditHouse: EditHouseContainer,
+    HouseDetail: HouseDetailContainer,
+    AddRoom: AddRoomContainer
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({

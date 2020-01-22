@@ -5,7 +5,9 @@ import { withNavigation } from 'react-navigation';
 
 function EditHouseContainer(props: any) {
   console.log("param test", props.navigation.getParam('id'), props.navigation.getParam('address'))
-  const [houseName, setHouseName] = useState(props.navigation.getParam('name'));
+  const name = props.navigation.getParam('name');
+  console.log("name", name);
+  const [houseName, setHouseName] = useState(name);
   const [rooms, setRooms] = useState([{ name: "", floor: "" }]);
   const [roomCnt, setRoomCnt] = useState(0);
 
@@ -26,7 +28,7 @@ function EditHouseContainer(props: any) {
 
   return (
     <EditHouse
-      housename={houseName}
+      houseName={houseName}
       handleChange={handleChange}
       setHouseName={setHouseName}
       rooms={rooms}
