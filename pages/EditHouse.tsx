@@ -20,7 +20,7 @@ export default function EditHouse(props: any) {
               <Input
                 secureTextEntry={true}
                 value={item.name}
-                onChangeText={props.editRoom}
+                onChangeText={(test) => props.handleChange(test, idx)}
               />
             </Item>);
         })}

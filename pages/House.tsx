@@ -10,7 +10,9 @@ const MoveButton = withNavigation((props: { navigation: NavigationStackProp }) =
   <Button title="Move" onPress={() => props.navigation.push('Edit')} />
 ))
 
-export default function House(props: any) {
+function House(props: any) {
+  console.log("props", Object.keys(props));
+
   if (props.loading) return <Text>로딩 중...</Text>;
   if (props.error) return <Text>오류 :</Text>;
 
@@ -20,7 +22,7 @@ export default function House(props: any) {
       <Content>
         <List>
           {buildings.map((item, idx) => {
-            return <ListItem key={idx} onPress={() => props.moveToBuilding(idx)}><Text>{item.name}</Text><Text>{item.address}</Text></ListItem>
+            return <ListItem key={idx} onPress={() => props.navigation.navigate("Edit", { id: item.id, name: item.name, address: item.address })}><Text>{item.id + item.name + item.address}</Text></ListItem>
           })}
         </List>
         <MoveButton />
@@ -28,3 +30,5 @@ export default function House(props: any) {
     </Container >
   );
 }
+
+export default withNavigation(House);

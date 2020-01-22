@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 
 import EditHouse from "./EditHouse";
+import { withNavigation } from 'react-navigation';
 
-export default function EditHouseContainer() {
-  const [houseName, setHouseName] = useState("");
+function EditHouseContainer(props: any) {
+  console.log("param test", props.navigation.getParam('id'), props.navigation.getParam('address'))
+  const [houseName, setHouseName] = useState(props.navigation.getParam('name'));
   const [rooms, setRooms] = useState([{ name: "", floor: "" }]);
   const [roomCnt, setRoomCnt] = useState(0);
+
+  const handleChange = (test: any) => {
+    console.log("handleChange params", test);
+  }
 
   function addRoom() {
     let tmpRooms = rooms;
@@ -21,6 +27,7 @@ export default function EditHouseContainer() {
   return (
     <EditHouse
       housename={houseName}
+      handleChange={handleChange}
       setHouseName={setHouseName}
       rooms={rooms}
       setRooms={setRooms}
@@ -29,3 +36,5 @@ export default function EditHouseContainer() {
     />
   );
 }
+
+export default withNavigation(EditHouseContainer);

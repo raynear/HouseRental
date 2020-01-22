@@ -5,7 +5,7 @@ import { GET_NAME } from "./GQL";
 
 import House from "./House";
 
-export default function HouseContainer() {
+export default function HouseContainer(props: any) {
   function moveToBuilding(params) {
     console.log("test", queryVal.data.buildings[params]);
   }
