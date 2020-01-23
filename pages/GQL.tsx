@@ -11,8 +11,8 @@ export const GET_BUILDINGS = gql`
   `;
 
 export const SET_ROOM = gql`
-mutation AddRoom($name:String!, $floor:String!){
-  addRoom(name:$name, floor:$floor) {
+mutation AddRoom($buildingId:String!, $name:String!, $floor:Int!){
+  addRoom(buildingId:$buildingId, name:$name, floor:$floor) {
     name
     floor
   }

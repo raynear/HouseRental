@@ -15,12 +15,16 @@ function HouseDetail(props: any) {
       </Header>
       <Content>
         <List>
-          <ListItem>
-            <Text>test</Text>
-          </ListItem>
+          {props.data.rooms.map((item, idx) => {
+            return (
+              <ListItem>
+                <Text>{item.name} - {item.floor}</Text>
+              </ListItem>
+            );
+          })}
         </List>
       </Content>
-      <Button onPress={() => props.navigation.push('AddRoom')}><Text>Add New Room</Text></Button>
+      <Button onPress={() => props.navigation.push('AddRoom', { id: props.id })}><Text>Add New Room</Text></Button>
     </>
   );
 }

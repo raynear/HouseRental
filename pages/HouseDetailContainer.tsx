@@ -9,6 +9,7 @@ import HouseDetail from './HouseDetail';
 
 function HouseDetailContainer(props: any) {
   const houseName = props.navigation.getParam('name');
+  const id = props.navigation.getParam('id');
 
   const [rooms, setRooms] = useState([]);
 
@@ -18,6 +19,7 @@ function HouseDetailContainer(props: any) {
     <HouseDetail
       {...queryVal}
       houseName={houseName}
+      id={id}
     />
   );
 }
