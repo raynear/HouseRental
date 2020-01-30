@@ -15,6 +15,7 @@ function AddRoomContainer(props: any) {
   function addRoom() {
     mutateAddRoom({ variables: { buildingId: buildingId, name: values.name, floor: parseInt(values.floor) } }).then((result) => {
       console.log("mutate complete", result);
+      props.navigation.goBack();
     });
     console.log("Add Room");
   }

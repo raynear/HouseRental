@@ -17,7 +17,7 @@ function HouseDetail(props: any) {
         <List>
           {props.data.rooms.map((item, idx) => {
             return (
-              <ListItem>
+              <ListItem key={idx}>
                 <Text>{item.name} - {item.floor}</Text>
               </ListItem>
             );
