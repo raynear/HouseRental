@@ -1,7 +1,7 @@
 import React from 'react';
 import { Content, Form, Item, Label, Input, Button, Text } from "native-base";
 
-export default function EditHouse(props: any) {
+export default function EditBuilding(props: any) {
   return (
     <Content>
       <Form>

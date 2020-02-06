@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 import EditRooms from "./EditRooms";
 
-export default function EditHouseContainer() {
-  const [houseName, setHouseName] = useState("");
+export default function EditBuildingContainer() {
+  const [buildingName, setBuildingName] = useState("");
   const [rooms, setRooms] = useState([{ name: "", floor: "" }]);
   const [roomCnt, setRoomCnt] = useState(0);
 
@@ -20,8 +20,8 @@ export default function EditHouseContainer() {
 
   return (
     <EditRooms
-      housename={houseName}
-      setHouseName={setHouseName}
+      buildingName={buildingName}
+      setBuildingName={setBuildingName}
       rooms={rooms}
       setRooms={setRooms}
       addRoom={addRoom}

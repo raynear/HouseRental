@@ -1,15 +1,15 @@
 import React from 'react';
 import { Content, Form, Item, Label, Input, Button, Text } from "native-base";
 
-export default function EditHouse(props: any) {
+export default function EditBuilding(props: any) {
   return (
     <Content>
       <Form>
         <Item floatingLabel>
-          <Label>House Name</Label>
+          <Label>Building Name</Label>
           <Input
-            value={props.houseName}
-            onChangeText={text => props.setHouseName(text)}
+            value={props.buildingName}
+            onChangeText={text => props.setBuildingName(text)}
           />
         </Item>
         <Button block info onPress={props.addRoom}><Text>Add Rooms</Text></Button>

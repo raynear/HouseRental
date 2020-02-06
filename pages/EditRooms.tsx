@@ -6,10 +6,10 @@ export default function EditRooms(props: any) {
     <Content>
       <Form>
         <Item floatingLabel>
-          <Label>{props.houseName}</Label>
+          <Label>{props.buildingName}</Label>
           <Input
-            value={props.houseName}
-            onChangeText={text => props.setHouseName(text)}
+            value={props.buildingName}
+            onChangeText={text => props.setBuildingName(text)}
           />
         </Item>
         <Button block info onPress={props.addRoom}><Text>Add Rooms</Text></Button>

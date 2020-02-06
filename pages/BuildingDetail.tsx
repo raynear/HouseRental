@@ -2,7 +2,7 @@ import React from 'react';
 import { withNavigation } from 'react-navigation';
 import { Content, Header, List, ListItem, H2, Text, Button } from "native-base";
 
-function HouseDetail(props: any) {
+function BuildingDetail(props: any) {
   if (props.loading) return <Text>Loading</Text>
   if (props.error) return <Text>Error</Text>
 
@@ -11,7 +11,7 @@ function HouseDetail(props: any) {
   return (
     <>
       <Header>
-        <H2 style={{ textAlign: "center", textAlignVertical: "center", color: "#ffffff" }}>{props.houseName}</H2>
+        <H2 style={{ textAlign: "center", textAlignVertical: "center", color: "#ffffff" }}>{props.buildingName}</H2>
       </Header>
       <Content>
         <List>
@@ -29,4 +29,4 @@ function HouseDetail(props: any) {
   );
 }
 
-export default withNavigation(HouseDetail);
+export default withNavigation(BuildingDetail);

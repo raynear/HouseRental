@@ -9,9 +9,10 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createMaterialTopTabNavigator, createBottomTabNavigator } from 'react-navigation-tabs';
 
 // import { styles } from './App/Style';
-import HouseContainer from './pages/HouseContainer';
-import EditHouseContainer from './pages/EditHouseContainer';
-import HouseDetailContainer from './pages/HouseDetailContainer';
+import BuildingsContainer from './pages/BuildingsContainer';
+import BuildingDetailContainer from './pages/BuildingDetailContainer';
+import EditBuildingContainer from './pages/EditBuildingContainer';
+import AddBuildingContainer from './pages/AddBuildingContainer';
 import AddRoomContainer from './pages/AddRoomContainer';
 import PeopleContainer from './pages/PeopleContainer';
 import RentContainer from './pages/RentContainer';
@@ -37,18 +38,19 @@ const client = new ApolloClient({
   }
 });
 
-const HouseStack = createStackNavigator(
+const BuildingStack = createStackNavigator(
   {
-    House: HouseContainer,
-    EditHouse: EditHouseContainer,
-    HouseDetail: HouseDetailContainer,
+    Building: BuildingsContainer,
+    BuildingDetail: BuildingDetailContainer,
+    EditBuilding: EditBuildingContainer,
+    AddBuilding: AddBuildingContainer,
     AddRoom: AddRoomContainer
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
-      title: 'House',
+      title: 'Building',
     }),
-    initialRouteName: 'House',
+    initialRouteName: 'Building',
   }
 );
 const PeopleStack = createStackNavigator(
@@ -85,7 +87,7 @@ const ConfigStack = createStackNavigator(
 
 const TabNavigator = createMaterialTopTabNavigator(
   {
-    House: { screen: HouseStack },
+    Building: { screen: BuildingStack },
     People: { screen: PeopleStack },
     Rent: { screen: RentStack },
     Config: { screen: ConfigStack },
@@ -96,7 +98,7 @@ const TabNavigator = createMaterialTopTabNavigator(
         const { routeName } = navigation.state;
         let icon = "▲";
 
-        if (routeName === 'House') {
+        if (routeName === 'Building') {
           icon = "🏡";
         } else if (routeName === 'People') {
           icon = "🙍"

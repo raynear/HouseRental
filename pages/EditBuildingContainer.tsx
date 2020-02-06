@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-import EditHouse from "./EditHouse";
+import EditBuilding from "./EditBuilding";
 import { withNavigation } from 'react-navigation';
 
-function EditHouseContainer(props: any) {
+function EditBuildingContainer(props: any) {
   console.log("param test", props.navigation.getParam('id'), props.navigation.getParam('address'))
   const name = props.navigation.getParam('name');
   console.log("name", name);
-  const [houseName, setHouseName] = useState(name);
+  const [buildingName, setBuildingName] = useState(name);
   const [rooms, setRooms] = useState([{ name: "", floor: "" }]);
   const [roomCnt, setRoomCnt] = useState(0);
 
@@ -27,10 +27,10 @@ function EditHouseContainer(props: any) {
   }
 
   return (
-    <EditHouse
-      houseName={houseName}
+    <EditBuilding
+      buildingName={buildingName}
       handleChange={handleChange}
-      setHouseName={setHouseName}
+      setBuildingName={setBuildingName}
       rooms={rooms}
       setRooms={setRooms}
       addRoom={addRoom}
@@ -39,4 +39,4 @@ function EditHouseContainer(props: any) {
   );
 }
 
-export default withNavigation(EditHouseContainer);
+export default withNavigation(EditBuildingContainer);

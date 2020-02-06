@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "House Rental",
-    "slug": "HouseRental",
+    "name": "Building Rental",
+    "slug": "BuildingRental",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": [

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
-import EditHouse from "./EditHouse";
+import EditBuilding from "./EditBuilding";
 
-export default function EditHouseContainer() {
+export default function EditBuildingContainer() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   return (
-    <EditHouse
+    <EditBuilding
       username={username}
       setUsername={setUsername}
       password={password}
