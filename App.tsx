@@ -17,6 +17,7 @@ import AddRoomContainer from './pages/AddRoomContainer';
 import PeopleContainer from './pages/PeopleContainer';
 import RentContainer from './pages/RentContainer';
 import ConfigContainer from './pages/ConfigContainer';
+import AuthContainer from './pages/AuthContainer';
 
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
@@ -75,7 +76,7 @@ const RentStack = createStackNavigator(
 );
 const ConfigStack = createStackNavigator(
   {
-    ConfigContainer
+    AuthContainer
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
