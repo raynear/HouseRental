@@ -38,9 +38,12 @@ export default function AuthContainer(props: any) {
     setValue({ ...value, [name]: text });
   }
 
+  const user = firebase.auth().currentUser;
+
   return (
     <Auth
       value={value}
+      user={user}
       onChange={onChange}
       doCreateUserWithEmailAndPassword={doCreateUserWithEmailAndPassword}
       doSignInWithEmailAndPassword={doSignInWithEmailAndPassword}
