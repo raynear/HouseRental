@@ -39,6 +39,10 @@ export default function AuthContainer(props: any) {
   }
 
   const user = firebase.auth().currentUser;
+  if (user) {
+    console.log("token", user.uid)
+    console.log("token", user.metadata)
+  }
 
   return (
     <Auth
