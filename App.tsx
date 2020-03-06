@@ -17,18 +17,32 @@ import AddRoomContainer from './pages/AddRoomContainer';
 import PeopleContainer from './pages/PeopleContainer';
 import RentContainer from './pages/RentContainer';
 import ConfigContainer from './pages/ConfigContainer';
+import { GoogleSigninSampleApp } from "./pages/OAuth";
 import AuthContainer from './pages/AuthContainer';
 
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 import { InMemoryCache } from "apollo-cache-inmemory";
 
+import firebase from './pages/firebase';
 
 const client = new ApolloClient({
   uri: "https://us-central1-house-rental-8c426.cloudfunctions.net/graphql",
   // tell apollo to include credentials for csrf token protection
   credentials: "include",
   // async operation with fetch to get csrf token
+  request: async operation => {
+    const user = firebase.auth().currentUser;
+    console.log("email", user.email);
+    console.log("uid", user.uid);
+    const token = await user.getIdToken(true);
+    console.log("token", token);
+    operation.setContext({
+      headers: {
+        authorization: `Bearer ${token}`,
+      }
+    })
+  },
   cache: new InMemoryCache(),
   clientState: {
     defaults: {
@@ -76,7 +90,7 @@ const RentStack = createStackNavigator(
 );
 const ConfigStack = createStackNavigator(
   {
-    AuthContainer
+    GoogleSigninSampleApp
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
